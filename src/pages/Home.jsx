@@ -5,6 +5,7 @@ import { Bird, Island, Plane, Sky } from "../models";
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1);
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43]; // for x axis y axis and z axis
@@ -94,6 +95,7 @@ const Home = () => {
             rotation={isIslandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
         </Suspense>
       </Canvas>
