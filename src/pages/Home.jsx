@@ -87,7 +87,7 @@ const Home = () => {
             rotation={[0, 20, 0]}
           />
           {/* now let's create some sky at the background to make it more better */}
-          <Sky />
+          <Sky isRotating={isRotating} />
 
           <Island
             position={isIslandPosition}
