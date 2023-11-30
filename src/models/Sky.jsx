@@ -7,8 +7,9 @@ const Sky = ({ isRotating }) => {
   const skyRef = useRef();
 
   useFrame((_, delta) => {
+    //  It represents the time, in seconds, that has passed since the last frame. This is often used in animations to ensure that the movement is smooth and consistent, regardless of the frame rate.
     // if (isRotating) {
-    skyRef.current.rotation.y += 0.25 * delta;
+    skyRef.current.rotation.y += 0.1 * delta;
     // }
   });
   return (

@@ -10,9 +10,7 @@ const Plane = ({ isRotating, ...props }) => {
 
   useEffect(() => {
     // if (isRotating) {
-    setTimeout(() => {
-      actions["Take 001"].play();
-    }, 2000);
+    actions["Take 001"].play();
     // } else {
     //   actions["Take 001"].stop();
     // }
