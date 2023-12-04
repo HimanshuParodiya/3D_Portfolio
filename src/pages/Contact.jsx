@@ -84,11 +84,12 @@ const Contact = () => {
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
       {alert.show && <Alert {...alert} />}
-      <Alert text="I did not receive your message" type="danger" />
+      {/* <Alert text="I did not receive your message" type="danger" /> */}
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
         <form
+          ref={formRef}
           onSubmit={handleSubmit}
           className="w-full flex flex-col gap-7 mt-14"
         >
