@@ -8,6 +8,7 @@ const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: [e.target.value] });
@@ -16,6 +17,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setCurrentAnimation("hit"); // hit mean run
+
     //
     // sending email
     emailjs
@@ -32,25 +35,45 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        setIsLoading(false);
+        setTimeout(() => {
+          setCurrentAnimation("idle");
+          setIsLoading(false);
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }, 3000);
         //TODO: Show success message
         //TODO: hide success message
       })
       .catch((error) => {
         setIsLoading(false);
+        setTimeout(() => {
+          setCurrentAnimation("idle");
+          setIsLoading(false);
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }, 3000);
         console.log(error);
         //TODO: Show error message
       });
   }; // when we click out of input flied so fox will start moving
-  const handleFocus = () => {}; // when we click input flied so fox will start moving
-  const handleBlur = () => {}; // when we click out of input flied so fox will start moving
+  const handleFocus = () => setCurrentAnimation("walk"); // when we click input flied so fox will start moving
+  const handleBlur = () => setCurrentAnimation("idle"); // when we click out of input flied so fox will start moving
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
-        <form className="w-full flex flex-col gap-7 mt-14">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col gap-7 mt-14"
+        >
           <label className="text-black-500 font-semibold">
             Name
             <input
@@ -120,6 +143,7 @@ const Contact = () => {
           <ambientLight intensity={0.5} />
           <Suspense fallback={<Loader />}>
             <Fox
+              currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.8, 0]}
               scale={[0.5, 0.5, 0.5]}
