@@ -1,10 +1,44 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: [e.target.value] });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    //
+    // sending email
+    emailjs
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Himanshu",
+          from_email: form.email,
+          to_email: import.meta.env.VITE_APP_MY_EMAIL_ID,
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setIsLoading(false);
+        //TODO: Show success message
+        //TODO: hide success message
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log(error);
+        //TODO: Show error message
+      });
+  }; // when we click out of input flied so fox will start moving
   const handleFocus = () => {}; // when we click input flied so fox will start moving
   const handleBlur = () => {}; // when we click out of input flied so fox will start moving
 
