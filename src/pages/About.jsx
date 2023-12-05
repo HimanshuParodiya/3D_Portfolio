@@ -1,5 +1,6 @@
 import React from "react";
 import { skills } from "../constants";
+import { CTA } from "../Components";
 
 const About = () => {
   return (
@@ -10,19 +11,17 @@ const About = () => {
           Himanshu
         </span>
       </h1>
-
       <div className="mt-5 flex flex-col gap-3 text-slate-500">
         <p>
           Frontend Developer based in India, specializing in technical education
           through hands-on learning and building application.
         </p>
       </div>
-
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
         <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map((skill) => (
-            <div className="block-container w-20 h-20">
+          {skills.map((skill, index) => (
+            <div key={index} className="block-container w-20 h-20">
               <div className="btn-back rounded-xl" />
               <div className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -35,6 +34,8 @@ const About = () => {
           ))}
         </div>
       </div>
+      <hr className="border-slate-200" />
+      <CTA />
     </section>
   );
 };
