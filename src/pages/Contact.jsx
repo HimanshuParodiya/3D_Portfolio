@@ -82,7 +82,7 @@ const Contact = () => {
   const handleBlur = () => setCurrentAnimation("idle"); // when we click out of input flied so fox will start moving
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex lg:flex-row flex-col max-container h-[100vh]">
       {alert.show && <Alert {...alert} />}
       {/* <Alert text="I did not receive your message" type="danger" /> */}
       <div className="flex-1 min-w-[50%] flex flex-col">

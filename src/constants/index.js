@@ -1,5 +1,6 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
 import {
+    netflix,
     car,
     contact,
     css,
@@ -112,6 +113,10 @@ export const skills = [
 
 ];
 
+export const aboutMe = [
+
+]
+
 export const experiences = [
     {
         title: "React.js Developer",
@@ -189,37 +194,59 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'Calculator',
+        description: 'Developed a web calculator that do simple calculations. ',
+        link: 'https://himanshu-webcalculator.netlify.app/',
     },
     {
         iconUrl: threads,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        name: 'SunnySide Landing Page',
+        description: 'Created a landing page took challenge frontend mentor.',
+        link: 'https://himanshu-sunnyside.netlify.app/',
     },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
+
     {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Weather App',
+        description: 'This is my very first app where I work with the API of OpenWeather. Where I created this responsive weather using HTML, CSS & JS as a means to explore new concepts in javascript. It allowed me to understand the basic of fetching data and showing it on our page.',
+        link: 'https://himanshu-weather.netlify.app/',
+    },
+    {
+        iconUrl: tesla,
+        theme: 'btn-back-black',
+        name: 'Tesla Clone',
+        description: "Created this responsive clone of Tesla's landing page using Reactjs and Styled-Components I choose using styled-component because I found it very new because, in my previous projects, I use a lot of plain CSS3 so this time I think while trying new technology like Reactjs I should also choose Styled-Components for CSS as a means to explore new technologies and their working.",
+        link: 'https://himanshu-react-tesla.netlify.app/',
     },
     {
         iconUrl: estate,
         theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'Space Tourism',
+        description: 'I took this challenge from the frontend Mentor. Where I had to create this responsive Space Tourism multipage React application which some smooth animation using Reactjs. It helps me a lot to understand the basics like how the react-router-dom and more .',
+        link: 'https://himanshu-react-space.netlify.app/',
+    },
+    {
+        iconUrl: netflix,
+        theme: 'btn-back-red',
+        name: 'Netflix Clone',
+        description: "Created a Netflix clone with login logout functionality using Firebase authentication. Here I explore React js, Redux js, and Firebase. How these technologies work together and how to integrate them. I took help here from Sony Sangha's youtube tutorial.",
+        link: 'https://himanshu-react-netflix.netlify.app/',
+    },
+    {
+        iconUrl: estate,
+        theme: 'btn-back-black',
+        name: 'EasyFind',
+        description: 'Create my first own E-commerce Store. This responsive E-commerce webApp. Where I work with handling API, infinite Scroll how to work on large-scale projects, and more',
+        link: 'https://himanshu-react-easyfind.netlify.app/',
+    },
+    {
+        iconUrl: estate,
+        theme: 'btn-back-black',
+        name: 'Movix',
+        description: 'The Movix. With Movix you can find any movie details, their trailers, and their Casts and you can also save them in your Favorite Movies section. I have used the TMDB database here to get the movies and their data. To create this responsive Movix app I use Reactjs, ReduxToolkit & Sass. This was the best practice to understand how to handle complex API and their response in real-world projects.',
+        link: 'https://himanshu-react-movix.netlify.app/',
     },
     {
         iconUrl: summiz,

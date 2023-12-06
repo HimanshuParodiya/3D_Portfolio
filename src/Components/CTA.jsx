@@ -2,14 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { arrow } from "../assets/icons";
 
-const CTA = () => {
+const CTA = ({ title }) => {
+  const capitalizeWord = (word) => {
+    let firstLetter = word[0].toUpperCase();
+    let newWord = firstLetter + word.slice(1);
+    return newWord;
+  };
+
   return (
     <section className="cta sm:flex-col flex-col">
       <p className="cta-text">
         Want to see what i build with these tech stacks?
       </p>
-      <Link to="/projects" className="btn">
-        Projects section
+      <Link to={`/${title}`} className="btn">
+        {capitalizeWord(title)}
         <img
           src={arrow}
           alt="right  arrow icon to learn more "
